@@ -23,7 +23,7 @@ class TicTacToe
     @board
   end 
  
-  def display_board(board)
+  def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
     puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
@@ -52,10 +52,10 @@ class TicTacToe
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(@board, index)
-      move(@board, index, current_player(@board))
-      display_board(@board)
+      move(@board, index, current_player)
+      display_board
     else
-      turn(@board)
+      turn
     end
   end
   
