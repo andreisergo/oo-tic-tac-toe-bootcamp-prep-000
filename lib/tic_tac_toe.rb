@@ -105,7 +105,7 @@ class TicTacToe
   
   def play
     until over?(@board) 
-      turn(@board)
+      turn
     end
     if won?(@board)
       puts "Congratulations #{winner(@board)}!"
