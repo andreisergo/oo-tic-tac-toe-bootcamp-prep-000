@@ -77,29 +77,29 @@ class TicTacToe
     end
   end
   
-  def won?(board) # returns winning combination
+  def won? # returns winning combination
     WIN_COMBINATIONS.detect do |combo|
       combo.all? { |pos| @board[pos] == "X"} || combo.all? { |pos| @board[pos] == "O"}
     end
   end
   
-  def full?(board)
+  def full?
     @board.all? do |pos|
       pos == "X" || pos == "O"
     end
   end
   
-  def draw?(board)
-    full?(@board) && !won?(@board)
+  def draw?
+    full? && !won?
   end
   
-  def over?(board)
-    won?(@board) || draw?(@board)
+  def over?
+    won? || draw?
   end
   
-  def winner(board)
-    if won?(@board) # All objects have true boolean value - except false, nil 
-      @board[won?(@board).first]
+  def winner
+    if won? # All objects have true boolean value - except false, nil 
+      @board[won?.first]
     end
   end
   
